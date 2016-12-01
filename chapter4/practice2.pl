@@ -7,3 +7,5 @@ my $a = @bases;
 print $a, "\n";
 ($a) = @bases;
 print $a, "\n";
+print scalar @bases;
+
