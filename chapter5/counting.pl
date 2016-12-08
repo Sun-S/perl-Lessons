@@ -40,3 +40,13 @@ print " A = $countA\n";
 print " C = $countC\n";
 print " G = $countG\n";
 print " T = $countT\n";
+my $c = 0 ;my $a = 0 ;
+my $g = 0 ;
+my $t = 0 ;
+
+while ( $DNA =~ /a/ig )   { $a++ }
+while ( $DNA =~ /c/ig )   { $c++ }
+while ( $DNA =~ /g/ig )   { $g++ }
+while ( $DNA =~ /t/ig )   { $t++ }
+
+print " A = $a  C = $c  T = $t  G= $g \n\n";
