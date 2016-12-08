@@ -4,6 +4,10 @@ use utf8;
 print "please type the filename:\n";
 my $file = <STDIN>;
 chomp $file;
+unless ( -e $file ) {
+ print " $file dosenot exit;\n";
+ exit;
+}
 open my $DNAFILE, '<', $file or die "$0 : failed to input $file : $!\n";
 my @DNA = <$DNAFILE>;
 close $DNAFILE or warn "$0 : failed to close!\n";
@@ -14,7 +18,11 @@ my $countA = 0;
 my $countC = 0;
 my $countG = 0;
 my $countT = 0;
-foreach my $base (@DNA) { 
+my $position = '';
+my $base = '';
+for ( $position = 0; $position < length $DNA ; ++$position ) {
+ $base = substr ( $DNA, $position, 1);
+ 
   if ( $base eq 'A' ) {
   $countA++;
   }
